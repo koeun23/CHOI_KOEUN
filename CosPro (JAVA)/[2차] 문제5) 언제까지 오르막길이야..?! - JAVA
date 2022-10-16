@@ -1,0 +1,28 @@
+// 다음과 같이 import를 사용할 수 있습니다.
+import java.util.*;
+
+class Main {
+    public int solution(int[] arr) {
+        
+        int answer = 0;
+				int count = 1;
+				for(int i=1; i<arr.length; i++){
+					int preNum = arr[i-1];
+					int num=arr[i];
+					
+					if(preNum<num){
+						count++;
+						
+					}
+					else if(num==preNum || num<preNum){
+						if(answer<count)
+							answer = count;
+						count = 1;
+					}
+					
+				}
+			if(answer<=2)
+				answer = 1;
+        return answer;
+    }
+
